@@ -84,3 +84,11 @@ namespace TestProject1
     }
 }
 ```
+
+**Cannot be Referenced Error**
+--------------------
+If you run into an error that looks similar to what is shown below, make sure to change the target framework and target OS in the test project properties.
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/169671864-e51da387-459f-49e6-a194-39121668e20d.png"><img>
+</p>
