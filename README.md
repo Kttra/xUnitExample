@@ -1,4 +1,4 @@
-# Xunit Example
+# An Example of using xUnit
 This repo will provide an example and instructions to use xunit for unit testing. In my example, I will be using xunit for a .NET 6 windows application.
 
 So let's say my main form that I want to test looks like this:
