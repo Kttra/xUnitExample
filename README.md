@@ -84,6 +84,12 @@ namespace TestProject1
     }
 }
 ```
+As for running the tests. Just right click on the solution and press run tests. To see the results, look at the test explorer.
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/169672022-ab562967-70aa-45f5-b60a-ab673486bfbb.png"><img>
+</p>
+
 
 **Cannot be Referenced Error**
 --------------------
