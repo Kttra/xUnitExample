@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ratioScaler/1.0.0": {
+        "runtime": {
+          "ratioScaler.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ratioScaler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
