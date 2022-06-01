@@ -72,7 +72,7 @@ namespace TestProject1
         //Let's us pass in data, and run a test multiple times with different datasets
         [Theory]
         [InlineData(4, 3, 7)]
-        [InlineData(21, 5.25, 26.25)]
+        [InlineData(21, 5, 26)]
         public void Add_SimpleValuesShouldCalculate(int x, int y, int expected)
         {
             //Act - Do the action we're testing
@@ -98,3 +98,64 @@ If you run into an error that looks similar to what is shown below, make sure to
 <p align="center">
 <img src="https://user-images.githubusercontent.com/100814612/169671864-e51da387-459f-49e6-a194-39121668e20d.png"><img>
 </p>
+
+# An Example of using MSTest
+This half of the project will go over unit testing using MSTest. MSTest is one type of framework that provides the facility to test code without using any third-party tool.
+
+**Creating a MSTest**
+--------------
+Creating a MSTest project file is similar to creating a XUnit project file. We right click on our solution and add a new project.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/171320878-2205d5d0-5645-412c-bafa-99e2d09066d8.png" width = "600" height = "494"><img>
+</p>
+
+Then we search for MSTest and select the MSTest Test Project from the list of projects.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/171321154-8a4fc9e3-e56b-4007-bb56-1e4eab2945e5.png"><img>
+</p>
+
+For this example, I will name my project "MSTestSample". We need to right click on the MSTest solution to add the original project as a reference.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/171321475-940a71ec-dc15-447e-bedb-79433d6367a0.png" width = "600" height = "467"><img>
+</p>
+Then we just select the project we want to test.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/169671632-4b7a6aea-aa85-4b94-a0f0-4bbd4e150247.png" width = "600", height = "414"><img>
+</p>
+
+You may need to restart visual studio for the added reference to update. You may also need to make sure to change the target framework to match the project you are testing. For the most part, MSTest is similar to XUnit, so I won't be explaining what's going on below.
+
+```cs
+using ratioScaler;
+
+namespace MSTestSample
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void SimpleTest()
+        {
+            //Arrange - Arrange our values to be setup to run our tests
+            int expected = 5;
+
+            //Act - Do the action we're testing
+            int actual = Form1.addNum(1, 4);
+
+            //Asset - Compare expected value and the resulting value
+            Assert.AreEqual(expected, actual);
+        }
+        [DataTestMethod]
+        [DataRow(4, 3, 7)]
+        [DataRow(21, 5, 26)]
+        public void MultiTest(int x, int y, int expected)
+        {
+            //Act - Do the action we're testing
+            int actual = Form1.addNum(x, y);
+
+            //Asset - Compare expected value and the resulting value
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
+```
